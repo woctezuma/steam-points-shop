@@ -1,6 +1,6 @@
 # Steam Points Shop
 
-[![Build status][build-image]][build]
+[![Build status with Github Action][build-image-action]][build-action]
 [![Updates][dependency-image]][pyup]
 [![Python 3][python3-image]][pyup]
 [![Code coverage][codecov-image]][codecov]
@@ -46,6 +46,9 @@ The [Wiki](https://github.com/woctezuma/steam-points-shop/wiki) shows a list of 
 
 [build]: <https://travis-ci.org/woctezuma/steam-points-shop>
 [build-image]: <https://travis-ci.org/woctezuma/steam-points-shop.svg?branch=master>
+
+[build-action]: <https://github.com/woctezuma/steam-points-shop/actions>
+[build-image-action]: <https://github.com/woctezuma/steam-points-shop/workflows/Python application/badge.svg?branch=master>
 
 [pyup]: <https://pyup.io/repos/github/woctezuma/steam-points-shop/>
 [dependency-image]: <https://pyup.io/repos/github/woctezuma/steam-points-shop/shield.svg>
