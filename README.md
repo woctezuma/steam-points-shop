@@ -8,6 +8,8 @@
 
 This repository contains Python code to find games which have been removed from the [Steam Points Shop](https://store.steampowered.com/points/shop/).
 
+![Cover: reply by Steam Support](https://github.com/woctezuma/steam-points-shop/wiki/img/steam_support.png)
+
 The Steam Points Shop is a loyalty program for Steam.
 It allows to exchange loyalty points for items (profile backgrounds, emoticons) which are otherwise available by spending money:
 -   either by collecting a complete set of trading cards, then crafting badges, to have a *chance* to obtain one of many items (at least three) of different rarity.
@@ -15,8 +17,6 @@ It allows to exchange loyalty points for items (profile backgrounds, emoticons) 
 
 Interestingly, some games are excluded from the Steam Points Shop, or removed by request of the game developers.
 The complete list is not public, but can be inferred from public data.
-
-![Cover: reply by Steam Support](https://github.com/woctezuma/steam-points-shop/wiki/img/steam_support.png)
 
 ## Requirements
 
