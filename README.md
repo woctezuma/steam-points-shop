@@ -55,4 +55,4 @@ The [Wiki](https://github.com/woctezuma/steam-points-shop/wiki) shows a list of 
 [codecov-image]: <https://codecov.io/gh/woctezuma/steam-points-shop/branch/master/graph/badge.svg>
 
 [codacy]: <https://www.codacy.com/app/woctezuma/steam-points-shop>
-[codacy-image]: <https://api.codacy.com/project/badge/Grade/TODO>
+[codacy-image]: <https://api.codacy.com/project/badge/Grade/ace838db0059444dbc0e2dc3388e12d9>
