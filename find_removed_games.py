@@ -1,4 +1,4 @@
-from utils import get_steamcardexchange_url, get_steam_db_url
+from utils import get_urls_for_markdown_display
 from download_steam_card_exchange import load_data_from_steam_card_exchange
 from download_steam_points_shop import load_data_from_steam_points_shop
 import steamspypi
@@ -28,11 +28,8 @@ def find_app_ids_missing_from_steam_card_exchange(verbose=False):
                 app_info = {"name": None}
 
             print(
-                "-   {} (appID = {}): {} ; {}".format(
-                    app_info["name"],
-                    app_id,
-                    get_steam_db_url(app_id),
-                    get_steamcardexchange_url(app_id),
+                "-   {} (appID = {}): {}".format(
+                    app_info["name"], app_id, get_urls_for_markdown_display(app_id),
                 )
             )
 
@@ -59,11 +56,8 @@ def find_app_ids_removed_from_steam_points_shop(verbose=False):
             app_info = steam_card_exchange_dico[app_id]
 
             print(
-                "-   {} (appID = {}): {} ; {}".format(
-                    app_info["name"],
-                    app_id,
-                    get_steam_db_url(app_id),
-                    get_steamcardexchange_url(app_id),
+                "-   {} (appID = {}): {}".format(
+                    app_info["name"], app_id, get_urls_for_markdown_display(app_id),
                 )
             )
 
