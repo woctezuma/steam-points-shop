@@ -16,7 +16,7 @@ def find_app_ids_missing_from_steam_card_exchange(verbose=False):
     missing_app_ids = steam_points_shop_app_ids.difference(steam_card_exchange_app_ids)
 
     print(
-        "Detection results: {} games missing from SteamCardExchange.".format(
+        "\n# Detection results: {} games missing from SteamCardExchange.".format(
             len(missing_app_ids)
         )
     )
@@ -49,7 +49,7 @@ def find_app_ids_removed_from_steam_points_shop(verbose=False):
     removed_app_ids = steam_card_exchange_app_ids.difference(steam_points_shop_app_ids)
 
     print(
-        "Detection results: {} games removed from Steam Points Shop.".format(
+        "\n# Detection results: {} games removed from Steam Points Shop.".format(
             len(removed_app_ids)
         )
     )
