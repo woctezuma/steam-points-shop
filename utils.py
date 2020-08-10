@@ -37,9 +37,17 @@ def get_steam_db_url(app_id):
     return url
 
 
+def get_steam_points_shop_url(app_id):
+    url = "https://store.steampowered.com/points/shop/app/{}".format(app_id)
+
+    return url
+
+
 def get_urls_for_markdown_display(app_id):
-    urls_for_markdown_display = "[SteamDB]({}) ; [SteamCardExchange]({})".format(
-        get_steam_db_url(app_id), get_steamcardexchange_url(app_id),
+    urls_for_markdown_display = "[SteamDB]({}) ; [SteamCardExchange]({}) ; [Steam Points Shop]({})".format(
+        get_steam_db_url(app_id),
+        get_steamcardexchange_url(app_id),
+        get_steam_points_shop_url(app_id),
     )
 
     return urls_for_markdown_display
