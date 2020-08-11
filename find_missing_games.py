@@ -1,3 +1,5 @@
+# Objective: find games which appear on Steam Points Shop, but are missing from SteamCardExchange.
+
 from utils import get_urls_for_markdown_display
 from download_steam_card_exchange import load_data_from_steam_card_exchange
 from download_steam_points_shop import load_data_from_steam_points_shop
