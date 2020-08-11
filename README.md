@@ -43,7 +43,9 @@ python find_missing_games.py
 
 ## Results
 
-The [Wiki](https://github.com/woctezuma/steam-points-shop/wiki) shows a list of removed games.
+The [Wiki](https://github.com/woctezuma/steam-points-shop/wiki) shows:
+-   a list of games [removed](https://github.com/woctezuma/steam-points-shop/wiki/removed_games) from Steam Points Shop,
+-   a list of games [missing](https://github.com/woctezuma/steam-points-shop/wiki/missing_games) from SteamCardExchange.
 
 ## References
 
