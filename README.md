@@ -29,8 +29,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+To find games which appear on SteamCardExchange, but have been removed from Steam Points Shop, run:
+
 ```bash
 python find_removed_games.py
+```
+
+To find games which appear on Steam Points Shop, but are missing from SteamCardExchange, run:
+
+```bash
+python find_missing_games.py
 ```
 
 ## Results
