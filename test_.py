@@ -43,9 +43,9 @@ class TestDownloadSteamPointsShopMethods(unittest.TestCase):
         response = download_steam_points_shop.get_steam_points_shop_api_response()
         self.assertIsNotNone(response)
 
-    def test_parse_steam_points_shop_api_url(self):
+    def test_parse_steam_points_shop_api_response(self):
         response = download_steam_points_shop.get_steam_points_shop_api_response()
-        dico = download_steam_points_shop.parse_steam_points_shop_api_url(
+        dico = download_steam_points_shop.parse_steam_points_shop_api_response(
             response, verbose=True
         )
         self.assertGreater(len(dico), 0)

@@ -35,7 +35,7 @@ def get_steam_points_shop_api_response(steam_points_shop_file_name=None):
     return response
 
 
-def parse_steam_points_shop_api_url(response, verbose=False):
+def parse_steam_points_shop_api_response(response, verbose=False):
     dico = dict()
 
     for app_info in response["response"]["apps"]:
@@ -70,7 +70,7 @@ def load_data_from_steam_points_shop(
         print("File {} not found.".format(steam_points_shop_file_name))
         response = get_steam_points_shop_api_response(steam_points_shop_file_name)
 
-    dico = parse_steam_points_shop_api_url(response, verbose=verbose)
+    dico = parse_steam_points_shop_api_response(response, verbose=verbose)
 
     return dico
 
