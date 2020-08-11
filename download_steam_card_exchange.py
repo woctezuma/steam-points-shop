@@ -66,9 +66,14 @@ def parse_steamcardexchange_api_response(response, verbose=False):
     return dico
 
 
-def load_data_from_steam_card_exchange(steamcardexchange_file_name=None, verbose=False):
+def load_data_from_steam_card_exchange(
+    steamcardexchange_file_name=None, force_download=False, verbose=False
+):
     if steamcardexchange_file_name is None:
         steamcardexchange_file_name = get_steamcardexchange_file_name()
+
+    if force_download:
+        response = get_steamcardexchange_api_response(steamcardexchange_file_name)
 
     try:
         if verbose:
