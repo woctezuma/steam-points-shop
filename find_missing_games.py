@@ -17,11 +17,7 @@ def find_app_ids_missing_from_steam_card_exchange(verbose=False):
 
     missing_app_ids = sorted(missing_app_ids, key=int)
 
-    print(
-        "\n# Detection results: {} games missing from SteamCardExchange.".format(
-            len(missing_app_ids)
-        )
-    )
+    print("# {} games missing from SteamCardExchange.".format(len(missing_app_ids)))
     if verbose:
         for app_id in missing_app_ids:
             try:

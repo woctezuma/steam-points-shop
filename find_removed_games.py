@@ -14,11 +14,7 @@ def find_app_ids_removed_from_steam_points_shop(verbose=False):
 
     removed_app_ids = sorted(removed_app_ids, key=int)
 
-    print(
-        "\n# Detection results: {} games removed from Steam Points Shop.".format(
-            len(removed_app_ids)
-        )
-    )
+    print("# {} games removed from Steam Points Shop.".format(len(removed_app_ids)))
 
     if verbose:
         for app_id in removed_app_ids:
