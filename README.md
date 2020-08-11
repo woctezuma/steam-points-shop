@@ -45,6 +45,12 @@ To find games which appear on Steam Points Shop, but are missing from SteamCardE
 python find_missing_games.py
 ```
 
+NB: missing games are games for which the price of a booster is unknown (`NA` for Not Available) on SteamCardExchange.
+Therefore, these games are not actually missing: it is an issue with our data retrieval process which relies on booster
+prices.
+
+![Unknown booster price](https://github.com/woctezuma/steam-points-shop/wiki/img/unknown_booster_price.png) 
+
 ## Results
 
 The [Wiki](https://github.com/woctezuma/steam-points-shop/wiki) shows:
