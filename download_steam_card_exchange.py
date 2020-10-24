@@ -9,17 +9,13 @@ from utils import get_steamcardexchange_file_name
 
 
 def get_steamcardexchange_api_url():
-    url = "https://www.steamcardexchange.net/api/request.php"
-
-    return url
+    return "https://www.steamcardexchange.net/api/request.php"
 
 
 def get_steamcardexchange_api_params():
-    params = {
+    return {
         "GetBoosterPrices": "",
     }
-
-    return params
 
 
 def get_steamcardexchange_api_response(steamcardexchange_file_name=None):
@@ -56,7 +52,7 @@ def parse_steamcardexchange_api_response(response, verbose=False):
             app_id = str(app_info[0][0])
             app_name = app_info[0][1]
 
-            dico[app_id] = dict()
+            dico[app_id] = {}
             dico[app_id]["app_id"] = int(app_id)
             dico[app_id]["name"] = app_name
 
@@ -86,9 +82,7 @@ def load_data_from_steam_card_exchange(
         print("File {} not found.".format(steamcardexchange_file_name))
         response = get_steamcardexchange_api_response(steamcardexchange_file_name)
 
-    dico = parse_steamcardexchange_api_response(response, verbose=verbose)
-
-    return dico
+    return parse_steamcardexchange_api_response(response, verbose=verbose)
 
 
 if __name__ == "__main__":

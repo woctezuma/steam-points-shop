@@ -6,9 +6,7 @@ from utils import get_steam_points_shop_file_name
 
 
 def get_steam_points_shop_api_url():
-    url = "https://api.steampowered.com/ILoyaltyRewardsService/GetEligibleApps/v1/"
-
-    return url
+    return "https://api.steampowered.com/ILoyaltyRewardsService/GetEligibleApps/v1/"
 
 
 def get_steam_points_shop_api_response(steam_points_shop_file_name=None):
@@ -41,7 +39,7 @@ def parse_steam_points_shop_api_response(response, verbose=False):
     for app_info in response["response"]["apps"]:
         app_id = str(app_info["appid"])
 
-        dico[app_id] = dict()
+        dico[app_id] = {}
         dico[app_id]["app_id"] = int(app_id)
 
     if verbose:
@@ -70,9 +68,7 @@ def load_data_from_steam_points_shop(
         print("File {} not found.".format(steam_points_shop_file_name))
         response = get_steam_points_shop_api_response(steam_points_shop_file_name)
 
-    dico = parse_steam_points_shop_api_response(response, verbose=verbose)
-
-    return dico
+    return parse_steam_points_shop_api_response(response, verbose=verbose)
 
 
 if __name__ == "__main__":
