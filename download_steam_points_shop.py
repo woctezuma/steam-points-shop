@@ -51,7 +51,9 @@ def parse_steam_points_shop_api_response(response, verbose=False):
 
 
 def load_data_from_steam_points_shop(
-    steam_points_shop_file_name=None, force_download=False, verbose=False
+    steam_points_shop_file_name=None,
+    force_download=False,
+    verbose=False,
 ):
     if steam_points_shop_file_name is None:
         steam_points_shop_file_name = get_steam_points_shop_file_name()

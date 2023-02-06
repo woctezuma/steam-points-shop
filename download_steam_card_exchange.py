@@ -29,7 +29,8 @@ def get_steamcardexchange_api_response(steamcardexchange_file_name=None):
     print("Downloading response from SteamCardExchange.")
 
     response_data = requests.get(
-        url=get_steamcardexchange_api_url(), params=get_steamcardexchange_api_params()
+        url=get_steamcardexchange_api_url(),
+        params=get_steamcardexchange_api_params(),
     )
 
     status_code = response_data.status_code
@@ -67,7 +68,9 @@ def parse_steamcardexchange_api_response(response, verbose=False):
 
 
 def load_data_from_steam_card_exchange(
-    steamcardexchange_file_name=None, force_download=False, verbose=False
+    steamcardexchange_file_name=None,
+    force_download=False,
+    verbose=False,
 ):
     if steamcardexchange_file_name is None:
         steamcardexchange_file_name = get_steamcardexchange_file_name()

@@ -23,13 +23,15 @@ class TestDownloadSteamCardExchangeMethods(unittest.TestCase):
     def test_parse_steamcardexchange_api_response(self):
         response = download_steam_card_exchange.get_steamcardexchange_api_response()
         dico = download_steam_card_exchange.parse_steamcardexchange_api_response(
-            response, verbose=True
+            response,
+            verbose=True,
         )
         self.assertGreater(len(dico), 0)
 
     def test_load_data_from_steam_card_exchange(self):
         dico = download_steam_card_exchange.load_data_from_steam_card_exchange(
-            force_download=True, verbose=True
+            force_download=True,
+            verbose=True,
         )
         self.assertGreater(len(dico), 0)
 
@@ -46,29 +48,37 @@ class TestDownloadSteamPointsShopMethods(unittest.TestCase):
     def test_parse_steam_points_shop_api_response(self):
         response = download_steam_points_shop.get_steam_points_shop_api_response()
         dico = download_steam_points_shop.parse_steam_points_shop_api_response(
-            response, verbose=True
+            response,
+            verbose=True,
         )
         self.assertGreater(len(dico), 0)
 
     def test_load_data_from_steam_points_shop(self):
         dico = download_steam_points_shop.load_data_from_steam_points_shop(
-            force_download=True, verbose=True
+            force_download=True,
+            verbose=True,
         )
         self.assertGreater(len(dico), 0)
 
 
 class TestFindMissingGamesMethods(unittest.TestCase):
     def test_find_app_ids_missing_from_steam_card_exchange(self):
-        missing_app_ids = find_missing_games.find_app_ids_missing_from_steam_card_exchange(
-            force_download=True, verbose=True
+        missing_app_ids = (
+            find_missing_games.find_app_ids_missing_from_steam_card_exchange(
+                force_download=True,
+                verbose=True,
+            )
         )
         self.assertGreaterEqual(len(missing_app_ids), 0)
 
 
 class TestFindRemovedGamesMethods(unittest.TestCase):
     def test_find_app_ids_removed_from_steam_points_shop(self):
-        removed_app_ids = find_removed_games.find_app_ids_removed_from_steam_points_shop(
-            force_download=True, verbose=True
+        removed_app_ids = (
+            find_removed_games.find_app_ids_removed_from_steam_points_shop(
+                force_download=True,
+                verbose=True,
+            )
         )
         self.assertGreater(len(removed_app_ids), 0)
 

@@ -10,12 +10,12 @@ def find_app_ids_missing_from_steam_card_exchange(force_download=False, verbose=
     steamspy_dico = steamspypi.load()
 
     steam_card_exchange_dico = load_data_from_steam_card_exchange(
-        force_download=force_download
+        force_download=force_download,
     )
     steam_card_exchange_app_ids = set(steam_card_exchange_dico.keys())
 
     steam_points_shop_dico = load_data_from_steam_points_shop(
-        force_download=force_download
+        force_download=force_download,
     )
     steam_points_shop_app_ids = set(steam_points_shop_dico.keys())
 
@@ -33,8 +33,10 @@ def find_app_ids_missing_from_steam_card_exchange(force_download=False, verbose=
 
             print(
                 "-   {} (appID = {}): {}".format(
-                    app_info["name"], app_id, get_urls_for_markdown_display(app_id),
-                )
+                    app_info["name"],
+                    app_id,
+                    get_urls_for_markdown_display(app_id),
+                ),
             )
 
     return missing_app_ids
@@ -42,5 +44,6 @@ def find_app_ids_missing_from_steam_card_exchange(force_download=False, verbose=
 
 if __name__ == "__main__":
     missing_app_ids = find_app_ids_missing_from_steam_card_exchange(
-        force_download=True, verbose=True
+        force_download=True,
+        verbose=True,
     )
