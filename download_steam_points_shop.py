@@ -24,28 +24,28 @@ def get_steam_points_shop_api_response(steam_points_shop_file_name=None):
     if status_code == 200:
         response = response_data.json()
 
-        print("Saving response to {}.".format(steam_points_shop_file_name))
+        print(f"Saving response to {steam_points_shop_file_name}.")
         with open(steam_points_shop_file_name, "w", encoding="utf-8") as f:
             json.dump(response, f)
 
     else:
-        print("Download failed with status code {}.".format(status_code))
+        print(f"Download failed with status code {status_code}.")
         response = None
 
     return response
 
 
 def parse_steam_points_shop_api_response(response, verbose=False):
-    dico = dict()
+    dico = {}
 
     for app_info in response["response"]["apps"]:
         app_id = str(app_info["appid"])
 
-        dico[app_id] = dict()
+        dico[app_id] = {}
         dico[app_id]["app_id"] = int(app_id)
 
     if verbose:
-        print("Parsing response: {} games have been found.".format(len(dico)))
+        print(f"Parsing response: {len(dico)} games have been found.")
 
     return dico
 
@@ -63,13 +63,13 @@ def load_data_from_steam_points_shop(
 
     try:
         if verbose:
-            print("Loading response from {}.".format(steam_points_shop_file_name))
+            print(f"Loading response from {steam_points_shop_file_name}.")
 
-        with open(steam_points_shop_file_name, "r", encoding="utf-8") as f:
+        with open(steam_points_shop_file_name, encoding="utf-8") as f:
             response = json.load(f)
 
     except FileNotFoundError:
-        print("File {} not found.".format(steam_points_shop_file_name))
+        print(f"File {steam_points_shop_file_name} not found.")
         response = get_steam_points_shop_api_response(steam_points_shop_file_name)
 
     dico = parse_steam_points_shop_api_response(response, verbose=verbose)

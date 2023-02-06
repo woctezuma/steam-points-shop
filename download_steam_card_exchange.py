@@ -38,31 +38,31 @@ def get_steamcardexchange_api_response(steamcardexchange_file_name=None):
     if status_code == 200:
         response = response_data.json()
 
-        print("Saving response to {}.".format(steamcardexchange_file_name))
+        print(f"Saving response to {steamcardexchange_file_name}.")
         with open(steamcardexchange_file_name, "w", encoding="utf-8") as f:
             json.dump(response, f)
 
     else:
-        print("Download failed with status code {}.".format(status_code))
+        print(f"Download failed with status code {status_code}.")
         response = None
 
     return response
 
 
 def parse_steamcardexchange_api_response(response, verbose=False):
-    dico = dict()
+    dico = {}
 
     if "data" in response:
         for app_info in response["data"]:
             app_id = str(app_info[0][0])
             app_name = app_info[0][1]
 
-            dico[app_id] = dict()
+            dico[app_id] = {}
             dico[app_id]["app_id"] = int(app_id)
             dico[app_id]["name"] = app_name
 
     if verbose:
-        print("Parsing response: {} games have been found.".format(len(dico)))
+        print(f"Parsing response: {len(dico)} games have been found.")
 
     return dico
 
@@ -80,13 +80,13 @@ def load_data_from_steam_card_exchange(
 
     try:
         if verbose:
-            print("Loading response from {}.".format(steamcardexchange_file_name))
+            print(f"Loading response from {steamcardexchange_file_name}.")
 
-        with open(steamcardexchange_file_name, "r", encoding="utf-8") as f:
+        with open(steamcardexchange_file_name, encoding="utf-8") as f:
             response = json.load(f)
 
     except FileNotFoundError:
-        print("File {} not found.".format(steamcardexchange_file_name))
+        print(f"File {steamcardexchange_file_name} not found.")
         response = get_steamcardexchange_api_response(steamcardexchange_file_name)
 
     dico = parse_steamcardexchange_api_response(response, verbose=verbose)

@@ -32,13 +32,13 @@ def get_steamcardexchange_url(app_id):
 
 
 def get_steam_db_url(app_id):
-    url = "https://steamdb.info/app/{}/".format(app_id)
+    url = f"https://steamdb.info/app/{app_id}/"
 
     return url
 
 
 def get_steam_points_shop_url(app_id):
-    url = "https://store.steampowered.com/points/shop/app/{}".format(app_id)
+    url = f"https://store.steampowered.com/points/shop/app/{app_id}"
 
     return url
 

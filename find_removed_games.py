@@ -1,8 +1,8 @@
 # Objective: find games which appear on SteamCardExchange, but have been removed from Steam Points Shop.
 
-from utils import get_urls_for_markdown_display
 from download_steam_card_exchange import load_data_from_steam_card_exchange
 from download_steam_points_shop import load_data_from_steam_points_shop
+from utils import get_urls_for_markdown_display
 
 
 def find_app_ids_removed_from_steam_points_shop(force_download=False, verbose=False):
@@ -20,7 +20,7 @@ def find_app_ids_removed_from_steam_points_shop(force_download=False, verbose=Fa
 
     removed_app_ids = sorted(removed_app_ids, key=int)
 
-    print("# {} games removed from Steam Points Shop.".format(len(removed_app_ids)))
+    print(f"# {len(removed_app_ids)} games removed from Steam Points Shop.")
 
     if verbose:
         for app_id in removed_app_ids:

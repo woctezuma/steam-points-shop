@@ -10,15 +10,15 @@ import utils
 class TestDownloadSteamCardExchangeMethods(unittest.TestCase):
     def test_get_steamcardexchange_api_url(self):
         url = download_steam_card_exchange.get_steamcardexchange_api_url()
-        self.assertTrue(url.startswith("https://www.steamcardexchange.net/"))
+        assert url.startswith("https://www.steamcardexchange.net/")
 
     def test_get_steamcardexchange_api_params(self):
         params = download_steam_card_exchange.get_steamcardexchange_api_params()
-        self.assertIn("GetBoosterPrices", params)
+        assert "GetBoosterPrices" in params
 
     def test_get_steamcardexchange_api_response(self):
         response = download_steam_card_exchange.get_steamcardexchange_api_response()
-        self.assertIsNotNone(response)
+        assert response is not None
 
     def test_parse_steamcardexchange_api_response(self):
         response = download_steam_card_exchange.get_steamcardexchange_api_response()
@@ -26,24 +26,24 @@ class TestDownloadSteamCardExchangeMethods(unittest.TestCase):
             response,
             verbose=True,
         )
-        self.assertGreater(len(dico), 0)
+        assert len(dico) > 0
 
     def test_load_data_from_steam_card_exchange(self):
         dico = download_steam_card_exchange.load_data_from_steam_card_exchange(
             force_download=True,
             verbose=True,
         )
-        self.assertGreater(len(dico), 0)
+        assert len(dico) > 0
 
 
 class TestDownloadSteamPointsShopMethods(unittest.TestCase):
     def test_get_steam_points_shop_api_url(self):
         url = download_steam_points_shop.get_steam_points_shop_api_url()
-        self.assertTrue(url.startswith("https://api.steampowered.com/"))
+        assert url.startswith("https://api.steampowered.com/")
 
     def test_get_steam_points_shop_api_response(self):
         response = download_steam_points_shop.get_steam_points_shop_api_response()
-        self.assertIsNotNone(response)
+        assert response is not None
 
     def test_parse_steam_points_shop_api_response(self):
         response = download_steam_points_shop.get_steam_points_shop_api_response()
@@ -51,14 +51,14 @@ class TestDownloadSteamPointsShopMethods(unittest.TestCase):
             response,
             verbose=True,
         )
-        self.assertGreater(len(dico), 0)
+        assert len(dico) > 0
 
     def test_load_data_from_steam_points_shop(self):
         dico = download_steam_points_shop.load_data_from_steam_points_shop(
             force_download=True,
             verbose=True,
         )
-        self.assertGreater(len(dico), 0)
+        assert len(dico) > 0
 
 
 class TestFindMissingGamesMethods(unittest.TestCase):
@@ -69,7 +69,7 @@ class TestFindMissingGamesMethods(unittest.TestCase):
                 verbose=True,
             )
         )
-        self.assertGreaterEqual(len(missing_app_ids), 0)
+        assert len(missing_app_ids) >= 0
 
 
 class TestFindRemovedGamesMethods(unittest.TestCase):
@@ -80,41 +80,41 @@ class TestFindRemovedGamesMethods(unittest.TestCase):
                 verbose=True,
             )
         )
-        self.assertGreater(len(removed_app_ids), 0)
+        assert len(removed_app_ids) > 0
 
 
 class TestUtilsMethods(unittest.TestCase):
     def test_get_data_folder(self):
         data_folder = utils.get_data_folder()
-        self.assertEqual(data_folder, "data/")
+        assert data_folder == "data/"
 
     def test_get_steamcardexchange_file_name(self):
         steam_card_exchange_file_name = utils.get_steamcardexchange_file_name()
-        self.assertEqual(steam_card_exchange_file_name, "data/steam_card_exchange.json")
+        assert steam_card_exchange_file_name == "data/steam_card_exchange.json"
 
     def test_get_steam_points_shop_file_name(self):
         steam_points_shop_file_name = utils.get_steam_points_shop_file_name()
-        self.assertEqual(steam_points_shop_file_name, "data/steam_points_shop.json")
+        assert steam_points_shop_file_name == "data/steam_points_shop.json"
 
     def test_get_steamcardexchange_url(self):
         app_id = None
         url = utils.get_steamcardexchange_url(app_id)
-        self.assertTrue(url.startswith("https://www.steamcardexchange.net/"))
+        assert url.startswith("https://www.steamcardexchange.net/")
 
     def test_get_steam_db_url(self):
         app_id = None
         url = utils.get_steam_db_url(app_id)
-        self.assertTrue(url.startswith("https://steamdb.info/"))
+        assert url.startswith("https://steamdb.info/")
 
     def test_get_steam_points_shop_url(self):
         app_id = None
         url = utils.get_steam_points_shop_url(app_id)
-        self.assertTrue(url.startswith("https://store.steampowered.com/points/shop/"))
+        assert url.startswith("https://store.steampowered.com/points/shop/")
 
     def test_get_urls_for_markdown_display(self):
         app_id = None
         text = utils.get_urls_for_markdown_display(app_id)
-        self.assertGreater(len(text), 0)
+        assert len(text) > 0
 
 
 if __name__ == "__main__":
